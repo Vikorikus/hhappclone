@@ -1,13 +1,18 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
 
-export default defineConfig({
-  base: "/hhappclone/",
-  plugins: [react()],
+const vitestConfig: VitestUserConfigInterface = {
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
     css: true,
   },
+};
+
+export default defineConfig({
+  base: "/hhappclone/",
+  plugins: [react()],
+  ...vitestConfig,
 });
