@@ -7,7 +7,6 @@ interface VacancyCardProps {
 }
 
 export const VacancyCard = ({ vacancy }: VacancyCardProps) => {
-  // 1. Улучшенная логика отображения зарплаты (с проверками на null)
   const renderSalary = () => {
     if (!vacancy.salary) return "Зарплата не указана";
 
@@ -33,7 +32,7 @@ export const VacancyCard = ({ vacancy }: VacancyCardProps) => {
     return { backgroundColor: "#F1F3F5", color: "#495057" };
   };
 
-  const internalLink = `/vacancies/${vacancy.id}`;
+  const internalLink = `/vacancy/${vacancy.id}`;
 
   return (
     <Paper withBorder p={24} radius={12} bg="white" style={{ width: "100%" }}>
